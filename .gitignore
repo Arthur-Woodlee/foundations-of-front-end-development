@@ -1,0 +1,15 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+
+# IDE/editor configs
+.vscode/
+.idea/
+
+# Environment files
+.env

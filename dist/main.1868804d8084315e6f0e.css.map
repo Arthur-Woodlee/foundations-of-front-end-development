@@ -1,0 +1,1 @@
+{"version":3,"file":"main.1868804d8084315e6f0e.css","mappings":";;;AAAA;EACE;AACF,C","sources":["webpack://foundations_of_front_end_development/./styles/pages/index.scss"],"sourcesContent":["body {\n  background-color: #f30101;\n}"],"names":[],"sourceRoot":""}
