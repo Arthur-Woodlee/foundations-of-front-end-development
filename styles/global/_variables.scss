@@ -1,0 +1,24 @@
+@use '_functions' as f;
+
+// Colors
+$color-heading: #333;
+$color-content: #212121;
+
+// Typography
+$font-size-base: 1rem;
+
+// Heandings Tokens
+$font-size-h1: f.modular-scale(4);
+$font-size-h2: f.modular-scale(3);
+$font-size-h3: f.modular-scale(2);
+$font-size-h4: f.modular-scale(1);
+$font-size-h5: f.modular-scale(0);
+$font-size-h6: f.modular-scale(-1);
+
+// Spacing Tokens
+$space-xs: f.spacing(0.25);
+$space-sm: f.spacing(0.5);
+$space-md: f.spacing(1);
+$space-lg: f.spacing(1.5);
+$space-xl: f.spacing(2);
+$space-xxl: f.spacing(3);

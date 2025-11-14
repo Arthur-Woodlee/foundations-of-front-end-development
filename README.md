@@ -29,8 +29,25 @@ foundations_of_front_end_development/
 ├── src/
 │   ├── entry/
 │   │   └── index.js
-│   └── pages/
-│       └── index.html
+│   ├── pages/
+│   │  └── index.html
+│   ├── styles/  
+│      └── global/
+│      │  ├── _functions.scss
+│      │  │
+│      │  ├── _typography.scss
+│      │  │ 
+│      │  ├── _variables.scss
+│      └── layout/
+│      │  ├── _bullet.scss
+│      │  │
+│      │  ├── _grid-3up.scss
+│      │  │
+│      │  ├── _media_.scss
+│      ├── components/
+│      │  │
+│      │  ├── card/
+│      │     ├── _card.scss
 ├── dist/
 ├── webpack.config.js
 └── package.json
