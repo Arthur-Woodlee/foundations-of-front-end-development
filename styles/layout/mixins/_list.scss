@@ -1,0 +1,13 @@
+@mixin list-unstyled {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+@mixin list-inline($gap: 1rem) {
+  display: flex;
+  gap: $gap;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}

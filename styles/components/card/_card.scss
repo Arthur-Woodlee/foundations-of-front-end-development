@@ -1,7 +1,6 @@
 @use '../../global/_variables' as v;
 @use '../../global/_functions' as f;
 @use '../../global/_typography' as t;
-@use '../../layout/_media' as m;
 
 .card {
   background-color:  #f9f9f9;
@@ -48,19 +47,5 @@
   &--incomplete {
     border-left: 6px solid red;
     background-color: #fff0f0;
-  }
-}
-
-@include m.respond-to(md) {
-  .card {
-    padding: v.$space-lg;
-  }
-
-  .card__title {
-    font-size:v.$font-size-h4;
-  }
-
-  .card__content {
-    font-size: v.$font-size-h6;
   }
 }

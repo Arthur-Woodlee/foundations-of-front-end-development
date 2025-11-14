@@ -50,14 +50,6 @@ p {
   color: #212121;
 }
 
-.grid3up {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
-}
-
 .card {
   background-color: #f9f9f9;
   border: 1px solid #212121;
@@ -99,16 +91,17 @@ p {
   background-color: #fff0f0;
 }
 
-@media (max-width: 768px) {
-  .card {
-    padding: 1.5rem;
-  }
-  .card__title {
-    font-size: 1.25rem;
-  }
-  .card__content {
-    font-size: 0.8rem;
-  }
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-block: 3rem;
 }
 
-/*# sourceMappingURL=main.ef6718b397faafd84738.css.map*/
+.status-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=main.531eba564a732c8f373e.css.map*/

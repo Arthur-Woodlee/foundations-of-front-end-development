@@ -1,3 +1,12 @@
 @use '../global/_typography.scss';
-@use '../layout/_grid-3up.scss';
-@use '../components/card/_card';
+@use '../layout/mixins/_grid.scss' as grid;
+@use '../layout/mixins/_list.scss' as list;
+@use '../components/card/_card.scss';
+
+.card-group {
+  @include grid.grid-3up;
+}
+
+.status-list {
+  @include list.list-unstyled;
+}

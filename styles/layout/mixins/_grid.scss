@@ -1,0 +1,14 @@
+@use '../../global/_variables' as v;
+
+@mixin grid-3up($columns: 3, $gap: v.$space-xl) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+  margin-block: v.$space-xxl;
+}
+
+@mixin grid-auto($min: 16rem, $gap: v.$space-lg) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: $gap;
+}
