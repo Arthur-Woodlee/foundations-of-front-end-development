@@ -1,7 +1,8 @@
-@use '../global/_typography.scss';
-@use '../layout/mixins/_grid.scss' as grid;
-@use '../layout/mixins/_list.scss' as list;
-@use '../components/card/_card.scss';
+@use '../global/typography';
+@use '../components/card/card';
+@use '../layout/mixins/grid' as grid;
+@use '../layout/mixins/list' as list;
+
 
 .card-group {
   @include grid.grid-3up;
