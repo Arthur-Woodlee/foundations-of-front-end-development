@@ -1,0 +1,28 @@
+@use '../global/_variables' as v;
+@use '../global/_functions' as f;
+@use '../layout/mixins/media' as m;
+
+.footer {
+  padding: f.spacing(1.5); // ~space-md
+  background-color: v.$color-header-footer-background;
+  text-align: center;
+  font-size: f.modular-scale(-1); // ~small body text for mobile
+
+  &__text {
+    margin: 0;
+    line-height: 1.5;
+    color: v.$color-footer-text;
+  }
+
+  // 🔹 Medium screens (≥768px)
+  @include m.respond-to(md) {
+    padding: f.spacing(2); // ~space-lg
+    font-size: f.modular-scale(0); // ~base size
+  }
+
+  // 🔹 Large screens (≥1024px)
+  @include m.respond-to(lg) {
+    padding: f.spacing(3); // ~space-xxl
+    font-size: f.modular-scale(1); // ~slightly larger for readability
+  }
+}

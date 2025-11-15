@@ -31,9 +31,15 @@ foundations_of_front_end_development/
 │   │   └── index.js
 │   ├── pages/
 │   │  └── index.html
+│   ├── scripts/
+│   │  └── parallax.js
 │   ├── styles/  
 │      └── global/
+│      │  ├── _footer.scss
+│      │  │
 │      │  ├── _functions.scss
+│      │  │ 
+│      │  ├── _header.scss
 │      │  │
 │      │  ├── _typography.scss
 │      │  │ 

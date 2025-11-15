@@ -1,3 +1,5 @@
+@use '../global/header';
+@use '../global/footer';
 @use '../global/typography';
 @use '../components/card/card';
 @use '../layout/mixins/grid' as grid;

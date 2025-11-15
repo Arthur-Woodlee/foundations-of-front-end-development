@@ -1,0 +1,65 @@
+@use '../global/_variables' as v;
+@use '../global/_functions' as f;
+@use '../layout/mixins/_grid' as g;
+@use '../layout/mixins/media' as m;
+
+.header {
+  @include g.flex-between;
+
+  padding: f.spacing(2) f.spacing(1); // mobile-first: tighter spacing
+  background-color: v.$color-header-footer-background;
+
+  &__title {
+    font-size: f.modular-scale(2); // smaller heading for mobile
+    font-weight: 700;
+    color: v.$color-header-title;
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: f.spacing(0.5); // tighter nav spacing on mobile
+  }
+
+  &__nav-item {
+    color: v.$color-header-nav;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: v.$color-header-nav;
+    }
+
+    &--active {
+      color: v.$color-header-nav;
+      text-decoration: none;
+    }
+  }
+
+  // 🔹 Medium screens (≥768px)
+  @include m.respond-to(md) {
+    padding: f.spacing(3) f.spacing(2);
+
+    &__title {
+      font-size: f.modular-scale(3);
+    }
+
+    &__nav {
+      gap: f.spacing(1);
+    }
+  }
+
+  // 🔹 Large screens (≥1024px)
+  @include m.respond-to(lg) {
+    padding: f.spacing(4) f.spacing(2);
+
+    &__title {
+      font-size: f.modular-scale(4);
+    }
+
+    &__nav {
+      gap: f.spacing(1.5);
+    }
+  }
+}

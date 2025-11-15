@@ -18,3 +18,4 @@
 @function spacing($multiplier, $base: 1rem) {
   @return strip-unit($base) * $multiplier * 1rem;
 }
+

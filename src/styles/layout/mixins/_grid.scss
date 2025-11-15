@@ -11,3 +11,9 @@
   gap: $gap;
   margin-block: $margin-block;
 }
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
