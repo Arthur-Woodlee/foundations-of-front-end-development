@@ -11,7 +11,7 @@
 .header__title {
   font-size: 1.5625rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #fff;
 }
 .header__nav {
   display: flex;
@@ -19,16 +19,16 @@
   gap: 0.5rem;
 }
 .header__nav-item {
-  color: #ccccff;
+  color: #cff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 .header__nav-item:hover {
-  color: #ccccff;
+  color: #cff;
 }
 .header__nav-item--active {
-  color: #ccccff;
+  color: #cff;
   text-decoration: none;
 }
 @media (min-width: 768px) {
@@ -63,7 +63,7 @@
 .footer__text {
   margin: 0;
   line-height: 1.5;
-  color: #ffffff;
+  color: #fff;
 }
 @media (min-width: 768px) {
   .footer {
@@ -231,4 +231,4 @@ p {
   margin: 0;
 }
 
-/*# sourceMappingURL=main.0b92ff4d6e3bcc890e94.css.map*/
+/*# sourceMappingURL=main.bdcda282ed853a5fee6c.css.map*/
