@@ -1,0 +1,81 @@
+@use '../../global/variables' as v;
+@use '../../global/functions' as f;
+@use '../../layout/mixins/media' as m;
+
+.book {
+  padding: f.spacing(2) f.spacing(1);
+  max-width: 72ch;
+  margin-inline: auto;
+  line-height: 1.6;
+
+  @include m.respond-to(md) {
+    padding: f.spacing(3) f.spacing(2);
+  }
+
+  @include m.respond-to(lg) {
+    padding: f.spacing(4) f.spacing(3);
+  }
+}
+
+.chapter {
+  margin-bottom: f.spacing(3);
+  padding-left: f.spacing(1);
+  padding-right: f.spacing(1);
+  background-color: #f5faff;     // soft blue background
+
+  &__title {
+    margin-bottom: f.spacing(1.5);
+    color: #003366; // deep heading blue
+  }
+
+  &__section {
+    margin-bottom: f.spacing(2);
+    padding: f.spacing(1);
+    border: 1px solid #d0d7de; // light gray border
+    border-radius: 4px;
+    background-color: #ffffff;
+
+    @include m.respond-to(md) {
+      padding: f.spacing(1.5);
+    }
+
+    @include m.respond-to(lg) {
+      padding: f.spacing(2);
+    }
+  }
+
+  &__section-title {
+    margin-bottom: f.spacing(1);
+    color: #003366;
+  }
+
+  &__section-text {
+    margin-bottom: f.spacing(1);
+    color: #333333;
+  }
+
+  &__section-code {
+    margin-bottom: f.spacing(1.5);
+    background-color: #f6f8fa; // GitHub-style code block
+    border: 1px solid #d0d7de;
+    padding: f.spacing(1);
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  &__subsection {
+    margin-top: f.spacing(2);
+    padding-left: f.spacing(1);
+    border-left: 2px dashed #99ccee; // lighter accent
+  }
+
+  &__subsection-title {
+    margin-bottom: f.spacing(0.75);
+    color: #003366;
+  }
+
+  &__subsection-text {
+    margin-bottom: f.spacing(1);
+    color: #333333;
+  }
+}

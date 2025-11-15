@@ -1,6 +1,7 @@
 @use '../global/header';
 @use '../global/footer';
 @use '../global/typography';
+@use '../components/book/book';
 @use '../layout/mixins/list' as list;
 
 .module-summary {

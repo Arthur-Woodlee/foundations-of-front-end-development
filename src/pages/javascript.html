@@ -5,93 +5,90 @@
     <meta charset="UTF-8" />
     <title>JavaScript Foundations</title>
 </head>
+
 <body>
     <header class="header">
         <h1 class="header__title">JavaScript Foundations</h1>
     </header>
- <main class="book">
+    <main class="book">
         <section id="module-patterns" class="chapter">
-            <h2>JavaScript Module Patterns</h2>
-
+            <h2 class="chapter__title">JavaScript Module Patterns</h2>
             <article class="chapter__section">
-                <h3>Closures (Module Pattern)</h3>
-                <p>
+                <h3 class="chapter__section-title">Closures (Module Pattern)</h3>
+                <p class="chapter__section-text">
                     Encapsulate private state using function scope.
                 </p>
 
-<pre>
+                <pre class="chapter__section-code">
     <code>
-    function closure() {
-        let count = 0; // private
-        return {
-            increment() { count++; },
-            getCount() { return count; }
-        };
-    }
+function closure() {
+  let count = 0; // private
+  return {
+    increment() { count++; },
+    getCount() { return count; }
+  };
+}
     </code>
-</pre>
+  </pre>
 
                 <ul class="module-summary">
                     <li>✅ Private variables</li>
                     <li>✅ Controlled public API</li>
-                    <li>
-                        ❌ No inheritance or extensibility — but ✅ supports composition for modular reuse
-                    </li>
+                    <li>❌ No inheritance or extensibility — but ✅ supports composition for modular reuse</li>
                 </ul>
             </article>
 
             <article class="chapter__section">
-                <h3>Object Literals</h3>
-                <p>
+                <h3 class="chapter__section-title">Object Literals</h3>
+                <p class="chapter__section-text">
                     Simple, declarative structure for grouping related properties and methods.
                 </p>
 
-                <pre>
-<code>
+                <pre class="chapter__section-code">
+    <code>
 const logger = {
-    level: 'info',
-    log(message) {
-        console.log('[${this.level}] ${message}');
-    }
+  level: 'info',
+  log(message) {
+    console.log('[${this.level}] ${message}');
+  }
 };
-</code>
-                </pre>
+    </code>
+  </pre>
 
                 <ul class="module-summary">
                     <li>✅ Easy to read and write</li>
                     <li>❌ No private state</li>
-                    <li>⚠️ No built-in inheritance — but can be
-                        extended via Object.create() (prototype delegation)</li>
+                    <li>⚠️ No built-in inheritance — but can be extended via Object.create()</li>
                 </ul>
             </article>
 
             <article class="chapter__section">
-                <h3>Prototypal Inheritance</h3>
-                <p>
+                <h3 class="chapter__section-title">Prototypal Inheritance</h3>
+                <p class="chapter__section-text">
                     Use <code>Object.create()</code> or constructor functions to share behavior.
                 </p>
 
-<pre>
+                <pre class="chapter__section-code">
     <code>
-    const animal = {
-        speak() { console.log('generic sound'); }
-    };
+const animal = {
+  speak() { console.log('generic sound'); }
+};
 
-    const dog = Object.create(animal);
-    dog.speak(); // "generic sound"
+const dog = Object.create(animal);
+dog.speak(); // "generic sound"
     </code>
-</pre>
+  </pre>
 
-<pre>
+                <pre class="chapter__section-code">
     <code>
-    function Animal(name) {
-        this.name = name;
-    }
-    Animal.prototype.speak = function () {
-        console.log('${this.name} makes a sound');
-    };
+function Animal(name) {
+  this.name = name;
+}
+Animal.prototype.speak = function () {
+  console.log('${this.name} makes a sound');
+};
     </code>
-</pre>
+  </pre>
 
                 <ul class="module-summary">
                     <li>✅ Shared behavior via prototype chain</li>
@@ -101,45 +98,44 @@ const logger = {
             </article>
 
             <article class="chapter__section">
-                <h3>ES6 Classes</h3>
-                <p>
+                <h3 class="chapter__section-title">ES6 Classes</h3>
+                <p class="chapter__section-text">
                     Syntactic sugar over prototypal inheritance.
                 </p>
 
-<pre>
+                <pre class="chapter__section-code">
     <code>
-    class User {
-    constructor(name) {
-        this.name = name;
-    }
-    greet() {
-        console.log(`Hello, ${this.name}`);
-    }
-    }
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+}
     </code>
-</pre>
+  </pre>
 
                 <ul class="module-summary">
                     <li>✅ Clear syntax</li>
-                    <li>✅ Supports inheritance
-                        (<code>extends</code>)</li>
+                    <li>✅ Supports inheritance (<code>extends</code>)</li>
                     <li>✅ Works well with modern tooling</li>
-                    <li>❌ No true private fields (until
-                        <code>#private</code> syntax)
-                    </li>
+                    <li>❌ No true private fields (until <code>#private</code> syntax)</li>
                 </ul>
             </article>
+
             <article class="chapter__section">
-                <h3>Modules Summary</h3>
-                <p>
+                <h3 class="chapter__section-title">Modules Summary</h3>
+                <p class="chapter__section-text">
                     ES6 modules provide encapsulation by scoping variables and objects to the module context. When
-                    combined with class <code>#private</code> fields, they offer strong privacy — unless objects are
-                    explicitly exposed to the global scope.
+                    combined with class
+                    <code>#private</code> fields, they offer strong privacy — unless objects are explicitly exposed to
+                    the global scope.
                 </p>
 
-                <section>
-                    <h4>Closure (Module Pattern)</h4>
-                    <p>Encapsulates private state using function scope.</p>
+                <section class="chapter__subsection">
+                    <h4 class="chapter__subsection-title">Closure (Module Pattern)</h4>
+                    <p class="chapter__subsection-text">Encapsulates private state using function scope.</p>
                     <ul class="module-summary">
                         <li>✅ Private variables via closure</li>
                         <li>✅ Controlled public API</li>
@@ -148,9 +144,10 @@ const logger = {
                     </ul>
                 </section>
 
-                <section>
-                    <h4>Object Literal</h4>
-                    <p>Simple structure for grouping related properties and methods.</p>
+                <section class="chapter__subsection">
+                    <h4 class="chapter__subsection-title">Object Literal</h4>
+                    <p class="chapter__subsection-text">Simple structure for grouping related properties and methods.
+                    </p>
                     <ul class="module-summary">
                         <li>❌ No private state</li>
                         <li>✅ Easy to inspect and modify</li>
@@ -159,9 +156,9 @@ const logger = {
                     </ul>
                 </section>
 
-                <section>
-                    <h4>Prototypal Inheritance</h4>
-                    <p>Shares behavior via prototype chain.</p>
+                <section class="chapter__subsection">
+                    <h4 class="chapter__subsection-title">Prototypal Inheritance</h4>
+                    <p class="chapter__subsection-text">Shares behavior via prototype chain.</p>
                     <ul class="module-summary">
                         <li>❌ No private state</li>
                         <li>✅ Memory-efficient</li>
@@ -170,9 +167,9 @@ const logger = {
                     </ul>
                 </section>
 
-                <section>
-                    <h4>ES6 Class</h4>
-                    <p>Syntactic sugar over prototypal inheritance.</p>
+                <section class="chapter__subsection">
+                    <h4 class="chapter__subsection-title">ES6 Class</h4>
+                    <p class="chapter__subsection-text">Syntactic sugar over prototypal inheritance.</p>
                     <ul class="module-summary">
                         <li>✅ Clear syntax</li>
                         <li>✅ Supports <code>extends</code> inheritance</li>
@@ -182,9 +179,9 @@ const logger = {
                     </ul>
                 </section>
 
-                <section>
-                    <h4>ES6 Module + Class</h4>
-                    <p>Combines module scope with class privacy.</p>
+                <section class="chapter__subsection">
+                    <h4 class="chapter__subsection-title">ES6 Module + Class</h4>
+                    <p class="chapter__subsection-text">Combines module scope with class privacy.</p>
                     <ul class="module-summary">
                         <li>✅ Strong privacy boundary</li>
                         <li>✅ <code>#private</code> fields + module scope</li>
@@ -194,36 +191,41 @@ const logger = {
                     </ul>
                 </section>
 
-                <section>
-                    <h4>Debugging Exposure</h4>
-                    <p>During development, you may want to inspect internal objects in DevTools. This can be done safely
-                        using conditional exposure:</p>
-<pre>
-    <code>
-    const ENV = 'development';
+                <section class="chapter__subsection">
+                    <h4 class="chapter__subsection-title">Debugging Exposure</h4>
+                    <p class="chapter__subsection-text">
+                        During development, you may want to inspect internal objects in DevTools. This can be done
+                        safely using conditional exposure:
+                    </p>
 
-    if (ENV === 'development') {
-    window.secretInstance = secretInstance;
-    console.log('🔍 Exposed for debugging');
-    }
-    </code>
-</pre>
-                    <ul>
+                    <pre class="chapter__section-code">
+      <code>
+const ENV = 'development';
+
+if (ENV === 'development') {
+  window.secretInstance = secretInstance;
+  console.log('🔍 Exposed for debugging');
+}
+      </code>
+    </pre>
+
+                    <ul class="module-summary">
                         <li>✅ Enables inspection during development</li>
                         <li>✅ Keeps production scope clean</li>
                         <li>⚠️ Avoid exposing sensitive logic or state</li>
                     </ul>
                 </section>
 
-                <p>
+                <p class="chapter__section-text">
                     ⚠️ Avoid attaching internal objects to <code>window</code> unless explicitly needed for debugging.
                     In production, this breaks encapsulation and undermines privacy guarantees.
                 </p>
             </article>
         </section>
     </main>
-   <footer class="footer">
-    <p class="footer__text">© 2025 Arthur Woodlee.</p>
-  </footer>
+    <footer class="footer">
+        <p class="footer__text">© 2025 Arthur Woodlee.</p>
+    </footer>
 </body>
+
 </html>

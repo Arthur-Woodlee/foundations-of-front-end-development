@@ -52,9 +52,11 @@ foundations_of_front_end_development/
 │      │         │
 │      │         ├── _media_.scss
 │      ├── components/
-│      │  │
-│      │  ├── card/
-│      │     ├── _card.scss
+│         │
+│         ├── card/
+│         │     ├── _card.scss
+│         ├── book/
+│               ├── _book.scss
 ├── dist/
 ├── webpack.config.js
 └── package.json
