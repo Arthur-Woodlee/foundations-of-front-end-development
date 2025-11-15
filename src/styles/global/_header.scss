@@ -6,11 +6,11 @@
 .header {
   @include g.flex-between;
 
-  padding: f.spacing(2) f.spacing(1); // mobile-first: tighter spacing
+  padding: f.spacing(2) f.spacing(1); // mobile-first
   background-color: v.$color-header-footer-background;
 
   &__title {
-    font-size: f.modular-scale(2); // smaller heading for mobile
+    // Assumes semantic tag (e.g. <h1> or <h2>)
     font-weight: 700;
     color: v.$color-header-title;
   }
@@ -37,26 +37,16 @@
     }
   }
 
-  // 🔹 Medium screens (≥768px)
   @include m.respond-to(md) {
     padding: f.spacing(3) f.spacing(2);
-
-    &__title {
-      font-size: f.modular-scale(3);
-    }
 
     &__nav {
       gap: f.spacing(1);
     }
   }
 
-  // 🔹 Large screens (≥1024px)
   @include m.respond-to(lg) {
     padding: f.spacing(4) f.spacing(2);
-
-    &__title {
-      font-size: f.modular-scale(4);
-    }
 
     &__nav {
       gap: f.spacing(1.5);

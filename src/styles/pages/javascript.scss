@@ -1,0 +1,9 @@
+@use '../global/header';
+@use '../global/footer';
+@use '../global/typography';
+@use '../layout/mixins/list' as list;
+
+.module-summary {
+    @include list.list-unstyled;
+}
+

@@ -30,9 +30,12 @@ module.exports = {
 
   // This tells Webpack where to start building the dependency graph for each entry point.
   // Each entry point results in a separate bundle.
-  entry: './src/entry/index.js',
+  entry: {
+    index: './src/entry/index.js',
+    javascript: './src/entry/javascript.js'
+  },
   output: {
-    filename: 'bundle.js', // Names each output file using its entry name and a content-based hash for cache busting.
+    filename: '[name].[contenthash].js', // Names each output file using its entry name and a content-based hash for cache busting.
     path: path.resolve(__dirname, 'dist'), // Resolves the absolute path to the 'dist' folder for writing output files.
     clean: true,// Clears the output directory before each build to remove outdated files.
   },
@@ -46,14 +49,21 @@ module.exports = {
   // Each instance handles one HTML file, using a specified template and chunk.
   // Without this plugin, you'd need to manually manage your HTML and asset references.
   new HtmlWebpackPlugin({
+    filename: 'index.html',
     template: './src/pages/index.html',
+    chunks: ['index']
   }),
-    // Extracts CSS into separate files instead of injecting via JS.
-    // '[name].[contenthash].css' enables cache busting per entry point.
-    // Without this plugin, styles are injected at runtime via <style> tags.
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
+  new HtmlWebpackPlugin({
+    filename: 'javascript.html',
+    template: './src/pages/javascript.html',
+    chunks: ['javascript']
+  }),
+  // Extracts CSS into separate files instead of injecting via JS.
+  // '[name].[contenthash].css' enables cache busting per entry point.
+  // Without this plugin, styles are injected at runtime via <style> tags.
+  new MiniCssExtractPlugin({
+    filename: '[name].[contenthash].css',
+  }),
 ],
 
   module: {

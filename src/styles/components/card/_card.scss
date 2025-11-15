@@ -17,12 +17,12 @@
   }
 
   &__title {
-    font-size: f.modular-scale(2); // h3
+    // Assumes semantic tag (e.g. <h3>)
     margin-bottom: f.spacing(0.5); // $space-sm
   }
 
   &__content {
-    font-size: f.modular-scale(0); // base
+    // Assumes semantic tag (e.g. <p>)
     line-height: 1.5;
   }
 
@@ -51,12 +51,10 @@
     padding: f.spacing(1.5); // $space-lg
 
     &__title {
-      font-size: f.modular-scale(3); // h2
-      margin-bottom: f.spacing(1);   // $space-md
+      margin-bottom: f.spacing(1); // $space-md
     }
 
     &__content {
-      font-size: f.modular-scale(0); // base
       line-height: 1.6;
     }
 
@@ -73,14 +71,6 @@
 
   @include m.respond-to(lg) {
     padding: f.spacing(2); // $space-xl
-
-    &__title {
-      font-size: f.modular-scale(4); // h1
-    }
-
-    &__content {
-      font-size: f.modular-scale(1); // lg-ish
-    }
 
     &__actions {
       gap: f.spacing(1.5); // $space-lg

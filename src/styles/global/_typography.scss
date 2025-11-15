@@ -1,51 +1,144 @@
 @use '_variables' as v;
 @use '_functions' as f;
+@use '../layout/mixins/media' as m;
 
 h1 {
-  font-size: f.modular-scale(4);
-  margin-bottom: f.spacing(2); // ~space-xl
+  font-size: f.modular-scale(3);
+  margin-bottom: f.spacing(1.5);
   font-weight: 700;
   color: v.$color-heading;
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(4);
+    margin-bottom: f.spacing(2);
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(5);
+    margin-bottom: f.spacing(2.5);
+  }
 }
 
 h2 {
-  font-size: f.modular-scale(3);
-  margin-bottom: f.spacing(1.5); // ~space-lg
+  font-size: f.modular-scale(2);
+  margin-bottom: f.spacing(1);
   font-weight: 600;
   color: v.$color-heading;
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(3);
+    margin-bottom: f.spacing(1.5);
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(4);
+    margin-bottom: f.spacing(2);
+  }
 }
 
 h3 {
-  font-size: f.modular-scale(2);
-  margin-bottom: f.spacing(1); // ~space-md
+  font-size: f.modular-scale(1);
+  margin-bottom: f.spacing(0.75);
   font-weight: 600;
   color: v.$color-heading;
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(2);
+    margin-bottom: f.spacing(1);
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(3);
+    margin-bottom: f.spacing(1.5);
+  }
 }
 
 h4 {
-  font-size: f.modular-scale(1);
-  margin-bottom: f.spacing(0.5); // ~space-sm
+  font-size: f.modular-scale(0);
+  margin-bottom: f.spacing(0.5);
   font-weight: 500;
   color: v.$color-heading;
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(1);
+    margin-bottom: f.spacing(0.75);
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(2);
+    margin-bottom: f.spacing(1);
+  }
 }
 
 h5 {
-  font-size: f.modular-scale(0);
-  margin-bottom: f.spacing(0.25); // ~space-xs
+  font-size: f.modular-scale(-1);
+  margin-bottom: f.spacing(0.25);
   font-weight: 500;
   color: v.$color-heading;
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(0);
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(1);
+  }
 }
 
 h6 {
-  font-size: f.modular-scale(-1);
-  margin-bottom: f.spacing(0.25); // ~space-xs
+  font-size: f.modular-scale(-2);
+  margin-bottom: f.spacing(0.25);
   font-weight: 500;
   color: v.$color-heading;
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(-1);
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(0);
+  }
 }
 
 p {
-  font-size: f.modular-scale(-1); // ~font-size-sm
+  font-size: f.modular-scale(-1);
   line-height: 1.6;
-  margin-bottom: f.spacing(1); // ~space-md
+  margin-bottom: f.spacing(1);
   color: v.$color-content;
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(0);
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(1);
+  }
+}
+
+a {
+  font-size: f.modular-scale(-1); // ~font-size-sm
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(0); // base
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(1); // slightly larger for readability
+  }
+}
+
+li {
+  font-size: f.modular-scale(-1); // ~font-size-sm
+  line-height: 1.5;
+  margin-bottom: f.spacing(0.5); // $space-sm
+
+  @include m.respond-to(md) {
+    font-size: f.modular-scale(0);
+    margin-bottom: f.spacing(0.75);
+  }
+
+  @include m.respond-to(lg) {
+    font-size: f.modular-scale(1);
+    margin-bottom: f.spacing(1);
+  }
 }
