@@ -1,6 +1,11 @@
 @use '../../global/_variables' as v;
+@use '../../global/_functions' as f;
 
-@mixin grid($columns: 1, $gap: v.$space-md, $margin-block: v.$space-sm) {
+@mixin grid(
+  $columns: 1,
+  $gap: f.spacing(1),           // ~space-md
+  $margin-block: f.spacing(0.5) // ~space-sm
+) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
   gap: $gap;

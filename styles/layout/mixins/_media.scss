@@ -16,7 +16,7 @@ $breakpoints: (
   @debug "Resolved breakpoint `#{$breakpoint}` to: #{$value}";
 
   @if $value {
-    @media (max-width: $value) {
+    @media (min-width: $value) {
       @content;
     }
   } @else {

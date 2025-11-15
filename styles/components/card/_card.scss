@@ -1,13 +1,14 @@
 @use '../../global/_variables' as v;
 @use '../../global/_functions' as f;
 @use '../../global/_typography' as t;
+@use '../../layout/mixins/media' as m;
 
 // Default values are to conform with a mobile-first approach
 .card {
   background-color: #f9f9f9;
   border: 1px solid #212121;
   border-radius: 8px;
-  padding: v.$space-md;
+  padding: f.spacing(1); // $space-md
   box-shadow: 0 1px 3px rgb(0 0 0 / 5%);
   transition: box-shadow 0.3s ease;
 
@@ -16,19 +17,19 @@
   }
 
   &__title {
-    font-size: v.$font-size-h3;
-    margin-bottom: v.$space-sm;
+    font-size: f.modular-scale(2); // h3
+    margin-bottom: f.spacing(0.5); // $space-sm
   }
 
   &__content {
-    font-size: v.$font-size-sm;
+    font-size: f.modular-scale(0); // base
     line-height: 1.5;
   }
 
   &__actions {
-    margin-top: v.$space-md;
+    margin-top: f.spacing(1); // $space-md
     flex-direction: column;
-    gap: v.$space-sm;
+    gap: f.spacing(0.5); // $space-sm
   }
 
   &--complete {
@@ -44,5 +45,49 @@
   &--incomplete {
     border-left: 4px solid red;
     background-color: #fff0f0;
+  }
+
+  @include m.respond-to(md) {
+    padding: f.spacing(1.5); // $space-lg
+
+    &__title {
+      font-size: f.modular-scale(3); // h2
+      margin-bottom: f.spacing(1);   // $space-md
+    }
+
+    &__content {
+      font-size: f.modular-scale(0); // base
+      line-height: 1.6;
+    }
+
+    &__actions {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: f.spacing(1); // $space-md
+    }
+
+    &:hover {
+      box-shadow: 0 3px 8px rgb(0 0 0 / 8%);
+    }
+  }
+
+  @include m.respond-to(lg) {
+    padding: f.spacing(2); // $space-xl
+
+    &__title {
+      font-size: f.modular-scale(4); // h1
+    }
+
+    &__content {
+      font-size: f.modular-scale(1); // lg-ish
+    }
+
+    &__actions {
+      gap: f.spacing(1.5); // $space-lg
+    }
+
+    &:hover {
+      box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    }
   }
 }

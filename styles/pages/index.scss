@@ -2,10 +2,21 @@
 @use '../components/card/card';
 @use '../layout/mixins/grid' as grid;
 @use '../layout/mixins/list' as list;
+@use '../layout/mixins/media' as media;
+@use '../global/_variables' as v;
+@use '../global/_functions' as f;
 
 
 .card-group {
-  @include grid.grid;
+  @include grid.grid; // mobile-first: 1 column, gap: f.spacing(1), margin-block: f.spacing(0.5)
+
+  @include media.respond-to(md) {
+    @include grid.grid(2, f.spacing(1.5), f.spacing(1)); // 2 columns, gap: ~space-lg, margin: ~space-md
+  }
+
+  @include media.respond-to(lg) {
+    @include grid.grid(3, f.spacing(2), f.spacing(1.5)); // 3 columns, gap: ~space-xl, margin: ~space-lg
+  }
 }
 
 .status-list {

@@ -2,50 +2,50 @@
 @use '_functions' as f;
 
 h1 {
-  font-size: v.$font-size-h1;
-  margin-bottom: v.$space-xl;
+  font-size: f.modular-scale(4);
+  margin-bottom: f.spacing(2); // ~space-xl
   font-weight: 700;
   color: v.$color-heading;
 }
 
 h2 {
-  font-size: v.$font-size-h2;
-  margin-bottom: v.$space-lg;
+  font-size: f.modular-scale(3);
+  margin-bottom: f.spacing(1.5); // ~space-lg
   font-weight: 600;
   color: v.$color-heading;
 }
 
 h3 {
-  font-size: v.$font-size-h3;
-  margin-bottom: v.$space-md;
+  font-size: f.modular-scale(2);
+  margin-bottom: f.spacing(1); // ~space-md
   font-weight: 600;
   color: v.$color-heading;
 }
 
 h4 {
-  font-size: v.$font-size-h4;
-  margin-bottom: v.$space-sm;
+  font-size: f.modular-scale(1);
+  margin-bottom: f.spacing(0.5); // ~space-sm
   font-weight: 500;
   color: v.$color-heading;
 }
 
 h5 {
-  font-size: v.$font-size-h5;
-  margin-bottom: v.$space-xs;
+  font-size: f.modular-scale(0);
+  margin-bottom: f.spacing(0.25); // ~space-xs
   font-weight: 500;
   color: v.$color-heading;
 }
 
 h6 {
-  font-size: v.$font-size-h6;
-  margin-bottom: v.$space-xs;
+  font-size: f.modular-scale(-1);
+  margin-bottom: f.spacing(0.25); // ~space-xs
   font-weight: 500;
   color: v.$color-heading;
 }
 
 p {
-  font-size: v.$font-size-sm;
+  font-size: f.modular-scale(-1); // ~font-size-sm
   line-height: 1.6;
-  margin-bottom: v.$space-md;
+  margin-bottom: f.spacing(1); // ~space-md
   color: v.$color-content;
 }
