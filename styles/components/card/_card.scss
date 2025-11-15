@@ -2,50 +2,47 @@
 @use '../../global/_functions' as f;
 @use '../../global/_typography' as t;
 
+// Default values are to conform with a mobile-first approach
 .card {
-  background-color:  #f9f9f9;
+  background-color: #f9f9f9;
   border: 1px solid #212121;
   border-radius: 8px;
-  padding: f.spacing(2);
-  box-shadow: 0 2px 6px rgb(0 0 0 / 5%);
+  padding: v.$space-md;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 5%);
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
   }
 
   &__title {
-    font-size: v.$font-size-h2;
-    font-weight: 600;
-    margin-bottom: v.$space-md;
-    color: #333;
+    font-size: v.$font-size-h3;
+    margin-bottom: v.$space-sm;
   }
 
   &__content {
-    font-size: v.$font-size-base;
-    line-height: 1.6;
-    color: #333;
+    font-size: v.$font-size-sm;
+    line-height: 1.5;
   }
 
   &__actions {
-    margin-top: v.$space-xl;
-    display: flex;
-    justify-content: flex-end;
-    gap: v.$space-md;
+    margin-top: v.$space-md;
+    flex-direction: column;
+    gap: v.$space-sm;
   }
-  
+
   &--complete {
-  border-left: 6px solid green;
-  background-color: #f0fff0;
+    border-left: 4px solid green;
+    background-color: #f0fff0;
   }
 
   &--inprogress {
-    border-left: 6px solid orange;
+    border-left: 4px solid orange;
     background-color: #fffaf0;
   }
 
   &--incomplete {
-    border-left: 6px solid red;
+    border-left: 4px solid red;
     background-color: #fff0f0;
   }
 }

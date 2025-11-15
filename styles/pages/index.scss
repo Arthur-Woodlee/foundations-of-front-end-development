@@ -5,7 +5,7 @@
 
 
 .card-group {
-  @include grid.grid-3up;
+  @include grid.grid;
 }
 
 .status-list {

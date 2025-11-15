@@ -5,9 +5,10 @@ $color-heading: #333;
 $color-content: #212121;
 
 // Typography
-$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
 
-// Heandings Tokens
+// Headings Tokens
 $font-size-h1: f.modular-scale(4);
 $font-size-h2: f.modular-scale(3);
 $font-size-h3: f.modular-scale(2);

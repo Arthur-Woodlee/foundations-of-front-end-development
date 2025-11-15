@@ -44,7 +44,7 @@ h6 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   margin-bottom: 1rem;
   color: #212121;
@@ -54,48 +54,44 @@ p {
   background-color: #f9f9f9;
   border: 1px solid #212121;
   border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease;
 }
 .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 .card__title {
-  font-size: 1.953125rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #333;
+  font-size: 1.5625rem;
+  margin-bottom: 0.5rem;
 }
 .card__content {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 .card__actions {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+  margin-top: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .card--complete {
-  border-left: 6px solid green;
+  border-left: 4px solid green;
   background-color: #f0fff0;
 }
 .card--inprogress {
-  border-left: 6px solid orange;
+  border-left: 4px solid orange;
   background-color: #fffaf0;
 }
 .card--incomplete {
-  border-left: 6px solid red;
+  border-left: 4px solid red;
   background-color: #fff0f0;
 }
 
 .card-group {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-block: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-block: 0.5rem;
 }
 
 .status-list {
@@ -104,4 +100,4 @@ p {
   margin: 0;
 }
 
-/*# sourceMappingURL=main.531eba564a732c8f373e.css.map*/
+/*# sourceMappingURL=main.f576ee0f9a8dc1fdcd95.css.map*/
