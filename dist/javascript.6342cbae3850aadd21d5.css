@@ -247,7 +247,7 @@ li {
 .chapter {
   margin-bottom: 3rem;
   padding-left: 1rem;
-  border-left: 4px solid #007acc;
+  padding-right: 1rem;
   background-color: #f5faff;
 }
 .chapter__title {
@@ -307,4 +307,4 @@ li {
   margin: 0;
 }
 
-/*# sourceMappingURL=javascript.54f089f5e45098e8d0d5.css.map*/
+/*# sourceMappingURL=javascript.6342cbae3850aadd21d5.css.map*/

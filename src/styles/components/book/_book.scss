@@ -1,6 +1,6 @@
-@use '../../global/variables' as v;
-@use '../../global/functions' as f;
-@use '../../layout/mixins/media' as m;
+@use "../../global/variables" as v;
+@use "../../global/functions" as f;
+@use "../../layout/mixins/media" as m;
 
 .book {
   padding: f.spacing(2) f.spacing(1);
@@ -21,7 +21,7 @@
   margin-bottom: f.spacing(3);
   padding-left: f.spacing(1);
   padding-right: f.spacing(1);
-  background-color: #f5faff;     // soft blue background
+  background-color: #f5faff; // soft blue background
 
   &__title {
     margin-bottom: f.spacing(1.5);
@@ -55,12 +55,26 @@
   }
 
   &__section-code {
-    margin-bottom: f.spacing(1.5);
-    background-color: #f6f8fa; // GitHub-style code block
-    border: 1px solid #d0d7de;
+    overflow-x: auto;
+    max-width: 100%;
     padding: f.spacing(1);
+    margin-bottom: f.spacing(1.5);
+
+    background-color: #f6f8fa; // GitHub-style code background
+    border: 1px solid #d0d7de;
     border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.875rem; // ~14px
+    line-height: 1.5;
+
+    // Optional: prevent long words from breaking layout
+    white-space: pre;
+    word-break: normal;
+
+    @include m.respond-to(sm) {
+      font-size: 0.75rem; // ~12px on small screens
+    }
   }
 
   &__subsection {
