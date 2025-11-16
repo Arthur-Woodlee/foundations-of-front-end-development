@@ -91,6 +91,7 @@
     color: #333;
   }
 }
+
 .chapter__intro {
   margin-bottom: f.spacing(3);
   padding: f.spacing(2);
@@ -108,13 +109,13 @@
 
   &-title {
     margin-bottom: f.spacing(1.5);
-    color: #003366;
+    color: #036;
     font-weight: 700;
   }
 
   &-text {
     margin-bottom: f.spacing(1);
-    color: #333333;
+    color: #333;
     line-height: 1.6;
   }
 
@@ -125,7 +126,7 @@
 
     li {
       margin-bottom: f.spacing(0.5);
-      color: #444444;
+      color: #444;
     }
   }
 }

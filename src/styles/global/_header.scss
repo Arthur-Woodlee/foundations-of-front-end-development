@@ -17,6 +17,7 @@
 
   &__nav {
     @include g.grid;
+
     gap: f.spacing(0.5); // tighter nav spacing on mobile
   }
 
@@ -38,6 +39,7 @@
 
   @include m.respond-to(md) {
     @include g.grid(2, f.spacing(2), f.spacing(1));
+    
     padding: f.spacing(3) f.spacing(2);
 
     &__nav {
