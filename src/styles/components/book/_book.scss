@@ -91,3 +91,41 @@
     color: #333;
   }
 }
+.chapter__intro {
+  margin-bottom: f.spacing(3);
+  padding: f.spacing(2);
+  border-left: 4px solid #007acc;
+  background-color: #f0f8ff;
+  border-radius: 4px;
+
+  @include m.respond-to(md) {
+    padding: f.spacing(3);
+  }
+
+  @include m.respond-to(lg) {
+    padding: f.spacing(4);
+  }
+
+  &-title {
+    margin-bottom: f.spacing(1.5);
+    color: #003366;
+    font-weight: 700;
+  }
+
+  &-text {
+    margin-bottom: f.spacing(1);
+    color: #333333;
+    line-height: 1.6;
+  }
+
+  ul {
+    margin-top: f.spacing(1.5);
+    padding-left: f.spacing(2);
+    list-style: disc;
+
+    li {
+      margin-bottom: f.spacing(0.5);
+      color: #444444;
+    }
+  }
+}
