@@ -1,6 +1,6 @@
-/*!***************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/pages/javascript.scss ***!
-  \***************************************************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/pages/index.scss ***!
+  \**********************************************************************************************************************/
 .header {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -234,132 +234,98 @@ li {
   }
 }
 
-.book {
-  padding: 2rem 1rem;
-  max-width: 72ch;
-  margin-inline: auto;
-  line-height: 1.6;
-}
-@media (min-width: 768px) {
-  .book {
-    padding: 3rem 2rem;
-  }
-}
-@media (min-width: 1024px) {
-  .book {
-    padding: 4rem 3rem;
-  }
-}
-
-.chapter {
-  margin-bottom: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: #f5faff;
-}
-.chapter__title {
-  margin-bottom: 1.5rem;
-  color: #036;
-}
-.chapter__section {
-  margin-bottom: 2rem;
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #212121;
+  border-radius: 8px;
   padding: 1rem;
-  border: 1px solid #d0d7de;
-  border-radius: 4px;
-  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.card__title {
+  margin-bottom: 0.5rem;
+}
+.card__content {
+  line-height: 1.5;
+}
+.card__actions {
+  margin-top: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card--complete {
+  border-left: 4px solid green;
+  background-color: #f0fff0;
+}
+.card--inprogress {
+  border-left: 4px solid orange;
+  background-color: #fffaf0;
+}
+.card--incomplete {
+  border-left: 4px solid red;
+  background-color: #fff0f0;
 }
 @media (min-width: 768px) {
-  .chapter__section {
+  .card {
     padding: 1.5rem;
   }
+  .card__title {
+    margin-bottom: 1rem;
+  }
+  .card__content {
+    line-height: 1.6;
+  }
+  .card__actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  .card:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  }
 }
 @media (min-width: 1024px) {
-  .chapter__section {
+  .card {
     padding: 2rem;
   }
-}
-.chapter__section-title {
-  margin-bottom: 1rem;
-  color: #036;
-}
-.chapter__section-text {
-  margin-bottom: 1rem;
-  color: #333;
-}
-.chapter__section-code {
-  overflow-x: auto;
-  max-width: 100%;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  background-color: #f6f8fa;
-  border: 1px solid #d0d7de;
-  border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  white-space: pre;
-  word-break: normal;
-}
-@media (min-width: 640px) {
-  .chapter__section-code {
-    font-size: 0.75rem;
+  .card__actions {
+    gap: 1.5rem;
+  }
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
-.chapter__subsection {
-  margin-top: 2rem;
-  padding-left: 1rem;
-  border-left: 2px dashed #9ce;
-}
-.chapter__subsection-title {
-  margin-bottom: 0.75rem;
-  color: #036;
-}
-.chapter__subsection-text {
-  margin-bottom: 1rem;
-  color: #333;
-}
 
-.chapter__intro {
-  margin-bottom: 3rem;
-  padding: 2rem;
-  border-left: 4px solid #007acc;
-  background-color: #f0f8ff;
-  border-radius: 4px;
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-block: 0.5rem;
 }
 @media (min-width: 768px) {
-  .chapter__intro {
-    padding: 3rem;
+  .card-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-block: 1rem;
   }
 }
 @media (min-width: 1024px) {
-  .chapter__intro {
-    padding: 4rem;
+  .card-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-block: 1.5rem;
   }
 }
-.chapter__intro-title {
-  margin-bottom: 1.5rem;
-  color: #003366;
-  font-weight: 700;
-}
-.chapter__intro-text {
-  margin-bottom: 1rem;
-  color: #333333;
-  line-height: 1.6;
-}
-.chapter__intro ul {
-  margin-top: 1.5rem;
-  padding-left: 2rem;
-  list-style: disc;
-}
-.chapter__intro ul li {
-  margin-bottom: 0.5rem;
-  color: #444444;
-}
 
-.module-summary {
+.status-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
-/*# sourceMappingURL=javascript.a30767726a53551faba1.css.map*/
+/*# sourceMappingURL=index.d53ea7cfef0ea14aa072.css.map*/

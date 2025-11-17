@@ -66,7 +66,7 @@
     font-size: 0.875rem; // ~14px
     line-height: 1.5;
 
-    // Optional: prevent long words from breaking layout
+    // Prevent long words from breaking layout
     white-space: pre;
     word-break: normal;
 
@@ -117,16 +117,5 @@
     margin-bottom: f.spacing(1);
     color: #333;
     line-height: 1.6;
-  }
-
-  ul {
-    margin-top: f.spacing(1.5);
-    padding-left: f.spacing(2);
-    list-style: disc;
-
-    li {
-      margin-bottom: f.spacing(0.5);
-      color: #444;
-    }
   }
 }
