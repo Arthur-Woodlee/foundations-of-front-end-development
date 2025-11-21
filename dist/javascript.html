@@ -21,32 +21,33 @@
   </header>
   <main class="book">
     <!------------------------------------------------ MODULES ------------------------------------------------>
-    <section id="module-patterns" class="chapter">
+    <article id="module-patterns" class="chapter">
       <h2 class="chapter__title">JavaScript Module Patterns</h2>
-      <section class="chapter__intro">
-        <h2 class="chapter__intro-title">Why Modules?</h2>
-        <p class="chapter__intro-text">
-          Modules are a way to <strong>bundle related data and functions into a single
-            unit</strong>. Instead of scattering variables and logic across the global scope, modules
-          give us a structured container where everything that belongs together lives together.
-        </p>
-        <h3 class="chapter__intro-subtitle">Why this matters</h3>
-        <ul class="summary">
-          <li>✅ <strong>Encapsulation</strong> — keeps related state and behavior in one place</li>
-          <li>✅ <strong>Clarity</strong> — readers immediately see which functions operate on which data</li>
-          <li>✅ <strong>Maintainability</strong> — changes to one module don’t ripple unpredictably across the
-            whole codebase</li>
-          <li>✅ <strong>Reusability</strong> — modules can be imported, reused or composed in different
-            contexts</li>
-        </ul>
-      </section>
-      <!-- Closures (Module Pattern) -->
-      <article class="chapter__section">
-        <h3 class="chapter__section-title">Closures (Module Pattern)</h3>
-        <p class="chapter__section-text">
-          Encapsulate private state using function scope.
-        </p>
-        <pre class="chapter__section-code">
+      <div class="chapter__content">
+        <section class="chapter__intro">
+          <h2 class="chapter__intro-title">Why Modules?</h2>
+          <p class="chapter__intro-text">
+            Modules are a way to <strong>bundle related data and functions into a single
+              unit</strong>. Instead of scattering variables and logic across the global scope, modules
+            give us a structured container where everything that belongs together lives together.
+          </p>
+          <h3 class="chapter__intro-subtitle">Why this matters</h3>
+          <ul class="summary">
+            <li>✅ <strong>Encapsulation</strong> — keeps related state and behavior in one place</li>
+            <li>✅ <strong>Clarity</strong> — readers immediately see which functions operate on which data</li>
+            <li>✅ <strong>Maintainability</strong> — changes to one module don’t ripple unpredictably across the
+              whole codebase</li>
+            <li>✅ <strong>Reusability</strong> — modules can be imported, reused or composed in different
+              contexts</li>
+          </ul>
+        </section>
+        <!-- Closures (Module Pattern) -->
+        <section class="chapter__section">
+          <h3 class="chapter__section-title">Closures (Module Pattern)</h3>
+          <p class="chapter__section-text">
+            Encapsulate private state using function scope.
+          </p>
+          <pre class="chapter__section-code">
           <code>
 function closure() {
   let count = 0; // private
@@ -57,20 +58,20 @@ function closure() {
 }
           </code>
         </pre>
-        <ul class="summary">
-          <li>✅ Private variables</li>
-          <li>✅ Controlled public API</li>
-          <li>❌ No inheritance or extensibility</li>
-          <li>✅ supports composition for modular reuse</li>
-        </ul>
-      </article>
-      <!-- Object Literals -->
-      <article class="chapter__section">
-        <h3 class="chapter__section-title">Object Literals</h3>
-        <p class="chapter__section-text">
-          Simple, declarative structure for grouping related properties and methods.
-        </p>
-        <pre class="chapter__section-code">
+          <ul class="summary">
+            <li>✅ Private variables</li>
+            <li>✅ Controlled public API</li>
+            <li>❌ No inheritance or extensibility</li>
+            <li>✅ supports composition for modular reuse</li>
+          </ul>
+        </section>
+        <!-- Object Literals -->
+        <section class="chapter__section">
+          <h3 class="chapter__section-title">Object Literals</h3>
+          <p class="chapter__section-text">
+            Simple, declarative structure for grouping related properties and methods.
+          </p>
+          <pre class="chapter__section-code">
           <code>
 const logger = {
   level: 'info',
@@ -80,19 +81,19 @@ const logger = {
 };
           </code>
         </pre>
-        <ul class="summary">
-          <li>✅ Easy to read and write</li>
-          <li>❌ No private state</li>
-          <li>⚠️ No built-in inheritance — but can be extended via Object.create()</li>
-        </ul>
-      </article>
-      <!-- Prototypal Inheritance -->
-      <article class="chapter__section">
-        <h3 class="chapter__section-title">Prototypal Inheritance</h3>
-        <p class="chapter__section-text">
-          Use <code>Object.create()</code> or constructor functions to share behavior.
-        </p>
-        <pre class="chapter__section-code">
+          <ul class="summary">
+            <li>✅ Easy to read and write</li>
+            <li>❌ No private state</li>
+            <li>⚠️ No built-in inheritance — but can be extended via Object.create()</li>
+          </ul>
+        </section>
+        <!-- Prototypal Inheritance -->
+        <section class="chapter__section">
+          <h3 class="chapter__section-title">Prototypal Inheritance</h3>
+          <p class="chapter__section-text">
+            Use <code>Object.create()</code> or constructor functions to share behavior.
+          </p>
+          <pre class="chapter__section-code">
           <code>
 const animal = {
   speak() { console.log('generic sound'); }
@@ -102,7 +103,7 @@ const dog = Object.create(animal);
 dog.speak(); // "generic sound"
           </code>
         </pre>
-        <pre class="chapter__section-code">
+          <pre class="chapter__section-code">
           <code>
 function Animal(name) {
   this.name = name;
@@ -112,19 +113,19 @@ Animal.prototype.speak = function () {
 };
           </code>
         </pre>
-        <ul class="summary">
-          <li>✅ Shared behavior via prototype chain</li>
-          <li>✅ Memory-efficient</li>
-          <li>❌ More verbose than classes</li>
-        </ul>
-      </article>
-      <!-- ES6 Classes -->
-      <article class="chapter__section">
-        <h3 class="chapter__section-title">ES6 Classes</h3>
-        <p class="chapter__section-text">
-          Syntactic sugar over prototypal inheritance.
-        </p>
-        <pre class="chapter__section-code">
+          <ul class="summary">
+            <li>✅ Shared behavior via prototype chain</li>
+            <li>✅ Memory-efficient</li>
+            <li>❌ More verbose than classes</li>
+          </ul>
+        </section>
+        <!-- ES6 Classes -->
+        <section class="chapter__section">
+          <h3 class="chapter__section-title">ES6 Classes</h3>
+          <p class="chapter__section-text">
+            Syntactic sugar over prototypal inheritance.
+          </p>
+          <pre class="chapter__section-code">
           <code>
 class User {
   constructor(name) {
@@ -136,82 +137,82 @@ class User {
 }
           </code>
         </pre>
-        <ul class="summary">
-          <li>✅ Clear syntax</li>
-          <li>✅ Supports inheritance (<code>extends</code>)</li>
-          <li>✅ Works well with modern tooling</li>
-          <li>❌ No true private fields (until <code>#private</code> syntax)</li>
-        </ul>
-      </article>
-      <!-- Modules Summary -->
-      <article class="chapter__section">
-        <h3 class="chapter__section-title">Modules Summary</h3>
-        <p class="chapter__section-text">
-          ES6 modules provide encapsulation by scoping variables and objects to the module context. When
-          combined with class
-          <code>#private</code> fields, they offer strong privacy — unless objects are explicitly exposed to
-          the global scope.
-        </p>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">Closure (Module Pattern)</h4>
-          <p class="chapter__subsection-text">Encapsulates private state using function scope.</p>
-          <ul class="summary">
-            <li>✅ Private variables via closure</li>
-            <li>✅ Controlled public API</li>
-            <li>✅ Hidden from DevTools unless exposed</li>
-            <li>✅ Runtime-enforced privacy</li>
-          </ul>
-        </section>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">Object Literal</h4>
-          <p class="chapter__subsection-text">Simple structure for grouping related properties and methods.
-          </p>
-          <ul class="summary">
-            <li>❌ No private state</li>
-            <li>✅ Easy to inspect and modify</li>
-            <li>⚠️ Can be extended via <code>Object.create()</code></li>
-            <li>❌ No runtime privacy</li>
-          </ul>
-        </section>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">Prototypal Inheritance</h4>
-          <p class="chapter__subsection-text">Shares behavior via prototype chain.</p>
-          <ul class="summary">
-            <li>❌ No private state</li>
-            <li>✅ Memory-efficient</li>
-            <li>✅ Shared behavior</li>
-            <li>❌ Fully inspectable in DevTools</li>
-          </ul>
-        </section>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">ES6 Class</h4>
-          <p class="chapter__subsection-text">Syntactic sugar over prototypal inheritance.</p>
           <ul class="summary">
             <li>✅ Clear syntax</li>
-            <li>✅ Supports <code>extends</code> inheritance</li>
-            <li>⚠️ <code>#private</code> fields are syntax-enforced only</li>
-            <li>❌ DevTools can inspect the instance</li>
-            <li>❌ Not runtime-enforced</li>
+            <li>✅ Supports inheritance (<code>extends</code>)</li>
+            <li>✅ Works well with modern tooling</li>
+            <li>❌ No true private fields (until <code>#private</code> syntax)</li>
           </ul>
         </section>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">ES6 Module + Class</h4>
-          <p class="chapter__subsection-text">Combines module scope with class privacy.</p>
-          <ul class="summary">
-            <li>✅ Strong privacy boundary</li>
-            <li>✅ <code>#private</code> fields + module scope</li>
-            <li>✅ Hidden unless explicitly exported</li>
-            <li>✅ Runtime-enforced object privacy</li>
-            <li>⚠️ Attaching to <code>window</code> breaks encapsulation</li>
-          </ul>
-        </section>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">Debugging Exposure</h4>
-          <p class="chapter__subsection-text">
-            During development, you may want to inspect internal objects in DevTools. This can be done
-            safely using conditional exposure:
+        <!-- Modules Summary -->
+        <section class="chapter__section">
+          <h3 class="chapter__section-title">Modules Summary</h3>
+          <p class="chapter__section-text">
+            ES6 modules provide encapsulation by scoping variables and objects to the module context. When
+            combined with class
+            <code>#private</code> fields, they offer strong privacy — unless objects are explicitly exposed to
+            the global scope.
           </p>
-          <pre class="chapter__section-code">
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">Closure (Module Pattern)</h4>
+            <p class="chapter__subsection-text">Encapsulates private state using function scope.</p>
+            <ul class="summary">
+              <li>✅ Private variables via closure</li>
+              <li>✅ Controlled public API</li>
+              <li>✅ Hidden from DevTools unless exposed</li>
+              <li>✅ Runtime-enforced privacy</li>
+            </ul>
+          </section>
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">Object Literal</h4>
+            <p class="chapter__subsection-text">Simple structure for grouping related properties and methods.
+            </p>
+            <ul class="summary">
+              <li>❌ No private state</li>
+              <li>✅ Easy to inspect and modify</li>
+              <li>⚠️ Can be extended via <code>Object.create()</code></li>
+              <li>❌ No runtime privacy</li>
+            </ul>
+          </section>
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">Prototypal Inheritance</h4>
+            <p class="chapter__subsection-text">Shares behavior via prototype chain.</p>
+            <ul class="summary">
+              <li>❌ No private state</li>
+              <li>✅ Memory-efficient</li>
+              <li>✅ Shared behavior</li>
+              <li>❌ Fully inspectable in DevTools</li>
+            </ul>
+          </section>
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">ES6 Class</h4>
+            <p class="chapter__subsection-text">Syntactic sugar over prototypal inheritance.</p>
+            <ul class="summary">
+              <li>✅ Clear syntax</li>
+              <li>✅ Supports <code>extends</code> inheritance</li>
+              <li>⚠️ <code>#private</code> fields are syntax-enforced only</li>
+              <li>❌ DevTools can inspect the instance</li>
+              <li>❌ Not runtime-enforced</li>
+            </ul>
+          </section>
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">ES6 Module + Class</h4>
+            <p class="chapter__subsection-text">Combines module scope with class privacy.</p>
+            <ul class="summary">
+              <li>✅ Strong privacy boundary</li>
+              <li>✅ <code>#private</code> fields + module scope</li>
+              <li>✅ Hidden unless explicitly exported</li>
+              <li>✅ Runtime-enforced object privacy</li>
+              <li>⚠️ Attaching to <code>window</code> breaks encapsulation</li>
+            </ul>
+          </section>
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">Debugging Exposure</h4>
+            <p class="chapter__subsection-text">
+              During development, you may want to inspect internal objects in DevTools. This can be done
+              safely using conditional exposure:
+            </p>
+            <pre class="chapter__section-code">
             <code>
 const ENV = 'development';
 
@@ -221,65 +222,69 @@ if (ENV === 'development') {
 }
             </code>
           </pre>
-          <ul class="summary">
-            <li>✅ Enables inspection during development</li>
-            <li>✅ Keeps production scope clean</li>
-            <li>⚠️ Avoid exposing sensitive logic or state</li>
-          </ul>
+            <ul class="summary">
+              <li>✅ Enables inspection during development</li>
+              <li>✅ Keeps production scope clean</li>
+              <li>⚠️ Avoid exposing sensitive logic or state</li>
+            </ul>
+          </section>
+
+          <p class="chapter__section-text">
+            ⚠️ Avoid attaching internal objects to <code>window</code> unless explicitly needed for debugging.
+            In production, this breaks encapsulation and undermines privacy guarantees.
+          </p>
         </section>
-
-        <p class="chapter__section-text">
-          ⚠️ Avoid attaching internal objects to <code>window</code> unless explicitly needed for debugging.
-          In production, this breaks encapsulation and undermines privacy guarantees.
-        </p>
-      </article>
-    </section>
+      </div>
+    </article>
     <!------------------------------------------------ HOISTING ------------------------------------------------>
-    <section id="hoisting" class="chapter">
-      <h2 class="chapter__title">Hoisting</h2>
-      <section class="chapter__intro">
-        <h2 class="chapter__intro-title">Hoisting in JavaScript</h2>
-        <p class="chapter__intro-text">
-          Hoisting is JavaScript’s way of handling variable and function declarations before code execution
-          begins.
-          Before the script is executed the engine first parses the code. Following are the steps.
-        </p>
-        <ol>
-          <li>
-            <strong>Creation phase (compile-time)</strong><br>
-            The engine scans the entire scope. Function declarations are fully hoisted (made available
-            before any code runs).
-            Variable declarations are registered but not yet assigned values (they default to
-            <code>undefined</code>).
-          </li>
-          <li>
-            <strong>Execution phase (run-time)</strong><br>
-            The engine executes code line by line. Variables receive their assigned values and functions
-            can be invoked because their definitions were already hoisted.
-          </li>
-        </ol>
+    <article id="hoisting" class="chapter">
+      <h2 class="chapter__title">
+        <button class="chapter__toggle">Hoisting</button>
+      </h2>
+      <div class="chapter__content">
+        <section class="chapter__intro">
+          <h2 class="chapter__intro-title">Hoisting in JavaScript</h2>
+          <p class="chapter__intro-text">
+            Hoisting is JavaScript’s way of handling variable and function declarations before code execution
+            begins.
+            Before the script is executed the engine first parses the code. Following are the steps.
+          </p>
+          <ol>
+            <li>
+              <strong>Creation phase (compile-time)</strong><br>
+              The engine scans the entire scope. Function declarations are fully hoisted (made available
+              before any code runs).
+              Variable declarations are registered but not yet assigned values (they default to
+              <code>undefined</code>).
+            </li>
+            <li>
+              <strong>Execution phase (run-time)</strong><br>
+              The engine executes code line by line. Variables receive their assigned values and functions
+              can be invoked because their definitions were already hoisted.
+            </li>
+          </ol>
 
-        <p class="chapter__intro-text">
-          This two-step process explains why you can call a function before it’s defined in the source code.
-          Variables declared with <code>var</code> behave differently than those declared with
-          <code>let</code> or
-          <code>const</code>.
-        </p>
-      </section>
-      <!-- Best Practice -->
-      <article class="chapter__section">
-        <h3 class="chapter__section-title">Best Practice</h3>
-        <p class="chapter__section-text">
-          Declaring and initializing variables before you use them:
-        </p>
-        <ul class="summary">
-          <li>✅ Avoids bugs from <code>undefined</code> or <code>ReferenceError</code></li>
-          <li>✅ Makes code more predictable and readable</li>
-          <li>✅ Prevents confusion from the <strong>Temporal Dead Zone</strong>
-            (<code>let</code>/<code>const</code>)</li>
-          <li>✅ Aligns with strict mode and modern linters (e.g. ESLint)</li>
-        </ul>
-        <pre class="chapter__section-code">
+          <p class="chapter__intro-text">
+            This two-step process explains why you can call a function before it’s defined in the source code.
+            Variables declared with <code>var</code> behave differently than those declared with
+            <code>let</code> or
+            <code>const</code>.
+          </p>
+        </section>
+        <!-- Best Practice -->
+        <section class="chapter__section">
+          <h3 class="chapter__section-title">Best Practice</h3>
+          <p class="chapter__section-text">
+            Declaring and initializing variables before you use them:
+          </p>
+          <ul class="summary">
+            <li>✅ Avoids bugs from <code>undefined</code> or <code>ReferenceError</code></li>
+            <li>✅ Makes code more predictable and readable</li>
+            <li>✅ Prevents confusion from the <strong>Temporal Dead Zone</strong>
+              (<code>let</code>/<code>const</code>)</li>
+            <li>✅ Aligns with strict mode and modern linters (e.g. ESLint)</li>
+          </ul>
+          <pre class="chapter__section-code">
           <code>
 let count = 0;
 function increment() {
@@ -287,28 +292,28 @@ function increment() {
 }
         </code>
         </pre>
-      </article>
-      <!-- When Hoisting Awareness Is Useful -->
-      <article class="chapter__section">
-        <h3 class="chapter__section-title">When Hoisting Awareness Is Useful</h3>
-        <p class="chapter__section-text">
-          While you shouldn’t <em>depend</em> on hoisting, understanding it helps you:
-        </p>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">1. Avoid Bugs with <code>var</code></h4>
-          <pre class="chapter__section-code">
+        </section>
+        <!-- When Hoisting Awareness Is Useful -->
+        <section class="chapter__section">
+          <h3 class="chapter__section-title">When Hoisting Awareness Is Useful</h3>
+          <p class="chapter__section-text">
+            While you shouldn’t <em>depend</em> on hoisting, understanding it helps you:
+          </p>
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">1. Avoid Bugs with <code>var</code></h4>
+            <pre class="chapter__section-code">
             <code>
 console.log(x); // undefined, not ReferenceError
 var x = 5;
             </code>
           </pre>
-          <p class="chapter__subsection-text">
-            Knowing this helps you refactor legacy code safely.
-          </p>
-        </section>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">Understand Function Declarations vs Expressions</h4>
-          <pre class="chapter__section-code">
+            <p class="chapter__subsection-text">
+              Knowing this helps you refactor legacy code safely.
+            </p>
+          </section>
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">Understand Function Declarations vs Expressions</h4>
+            <pre class="chapter__section-code">
             <code>
 greet(); // ✅ works
 function greet() { console.log("hi"); }
@@ -317,15 +322,15 @@ sayHi(); // ❌ TypeError: sayHi is not a function
 var sayHi = function () { console.log("hi"); };
             </code>
           </pre>
-          <ul class="summary">
-            <li>✅ Function declarations are hoisted with their body</li>
-            <li>❌ Function expressions (even with <code>var</code>) are hoisted as <code>undefined</code>
-            </li>
-          </ul>
-        </section>
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">3. Enable Mutual Recursion</h4>
-          <pre class="chapter__section-code">
+            <ul class="summary">
+              <li>✅ Function declarations are hoisted with their body</li>
+              <li>❌ Function expressions (even with <code>var</code>) are hoisted as <code>undefined</code>
+              </li>
+            </ul>
+          </section>
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">3. Enable Mutual Recursion</h4>
+            <pre class="chapter__section-code">
             <code>
 function isEven(n) {
   if (n === 0) return true;
@@ -337,14 +342,14 @@ function isOdd(n) {
 }
             </code>
           </pre>
-          <p class="chapter__subsection-text">
-            Both functions are hoisted, so they can call each other.
-          </p>
-        </section>
+            <p class="chapter__subsection-text">
+              Both functions are hoisted, so they can call each other.
+            </p>
+          </section>
 
-        <section class="chapter__subsection">
-          <h4 class="chapter__subsection-title">Module Initialization Order</h4>
-          <pre class="chapter__section-code">
+          <section class="chapter__subsection">
+            <h4 class="chapter__subsection-title">Module Initialization Order</h4>
+            <pre class="chapter__section-code">
             <code>
 const Module = (function () {
   init(); // ✅ works because function is hoisted
@@ -357,14 +362,15 @@ const Module = (function () {
 })();
             </code>
           </pre>
-          <p class="chapter__subsection-text">
-            In IIFEs or module factories, hoisting awareness helps you structure declarations cleanly.
-          </p>
+            <p class="chapter__subsection-text">
+              In IIFEs or module factories, hoisting awareness helps you structure declarations cleanly.
+            </p>
+          </section>
         </section>
-      </article>
-    </section>
+      </div>
+    </article>
     <!------------------------------------------------ THIS ------------------------------------------------>
-    <section id="this" class="chapter">
+    <article id="this" class="chapter">
       <h2 class="chapter__title">Understanding this in JavaScript</h2>
       <div class="chapter__intro">
         <p class="chapter__intro-text">
@@ -374,7 +380,7 @@ const Module = (function () {
         </p>
       </div>
       <!-- Global Context -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Global Context</h3>
         <pre class="chapter__section-code">
           <code>
@@ -387,9 +393,9 @@ console.log(this); // In browser: Window object
           </li>
           <li>⚠️ In strict mode: <code>this</code> is <code>undefined</code></li>
         </ul>
-      </article>
+      </section>
       <!-- Inside an Object Method -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Inside an Object Method</h3>
         <pre class="chapter__section-code">
           <code>
@@ -405,9 +411,9 @@ user.greet();
         <p class="chapter__section-text">
           <code>this</code> refers to the object the method is called on (<code>user</code>).
         </p>
-      </article>
+      </section>
       <!-- Standalone Function -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Standalone Function</h3>
         <pre class="chapter__section-code">
           <code>
@@ -420,9 +426,9 @@ show(); // In browser: Window (non-strict), undefined (strict)
         <p class="chapter__section-text">
           Not bound to any object → defaults to global or <code>undefined</code> in strict mode.
         </p>
-      </article>
+      </section>
       <!-- Arrow Functions -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Arrow Functions</h3>
         <pre class="chapter__section-code">
           <code>
@@ -439,9 +445,9 @@ obj.greet();
           <li>⚠️ Arrow functions <strong>do not bind their own <code>this</code></strong></li>
           <li>⚠️ They inherit <code>this</code> from the surrounding lexical scope</li>
         </ul>
-      </article>
+      </section>
       <!-- Constructor Functions -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Constructor Functions</h3>
         <pre class="chapter__section-code">
           <code>
@@ -455,9 +461,9 @@ console.log(u.name); // "Arthur"
         <p class="chapter__section-text">
           <code>this</code> refers to the newly created object.
         </p>
-      </article>
+      </section>
       <!-- Class Methods -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Class Methods</h3>
         <pre class="chapter__section-code">
           <code>
@@ -475,9 +481,9 @@ new User("Arthur").greet(); // "Hi Arthur"
         <p class="chapter__section-text">
           Same behavior as constructor functions.
         </p>
-      </article>
+      </section>
       <!-- call, apply, bind -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title"><code>call</code>, <code>apply</code> and <code>bind</code></h3>
         <pre class="chapter__section-code">
           <code>
@@ -495,9 +501,9 @@ bound();             // "Arthur"
         <p class="chapter__section-text">
           These methods <strong>explicitly set <code>this</code></strong>.
         </p>
-      </article>
+      </section>
       <!-- Event Handlers -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Event Handlers</h3>
         <pre class="chapter__section-code">
           <code>
@@ -510,9 +516,9 @@ document.querySelector("button").addEventListener("click", function () {
           <li>⚠️ In regular functions, <code>this</code> refers to the element the event is bound to</li>
           <li>⚠️ In arrow functions, <code>this</code> is inherited from the outer scope</li>
         </ul>
-      </article>
+      </section>
       <!-- setTimeout and setInterval -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title"><code>setTimeout</code> and <code>setInterval</code></h3>
         <pre class="chapter__section-code">
           <code>
@@ -538,9 +544,9 @@ setTimeout(() => {
 }, 1000);
         </code>
       </pre>
-      </article>
+      </section>
       <!-- DOM Inline Handlers -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">DOM Inline Handlers</h3>
         <pre class="chapter__section-code">
           <code>
@@ -553,9 +559,9 @@ setTimeout(() => {
           </li>
           <li>❌ Arrow functions wouldn’t work in this context</li>
         </ul>
-      </article>
+      </section>
       <!-- Arrow Functions Inside Object Methods -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Arrow Functions Inside Object Methods</h3>
         <p class="chapter__section-text">Pitfall: Arrow functions don’t bind <code>this</code>.</p>
         <pre class="chapter__section-code">
@@ -583,9 +589,9 @@ const obj = {
 obj.greet(); // ✅ Hello, Arthur
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Event Listeners -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Event Listeners</h3>
         <p class="chapter__section-text">Arrow Function: <code>this</code> is inherited (not the
           element).</p>
@@ -604,9 +610,9 @@ document.querySelector('#btn').addEventListener('click', function() {
 });
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Class Constructors -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Class Constructors</h3>
         <p class="chapter__section-text">Arrow Function: <code>this</code> is inherited — useful for
           callbacks.</p>
@@ -644,9 +650,9 @@ setInterval(function() {
 }.bind(this), 1000);
             </code>
         </pre>
-      </article>
+      </section>
       <!-- fetch + then -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title"><code>fetch</code> + <code>then</code> with Function Expression</h3>
         <pre class="chapter__section-code">
           <code>
@@ -680,9 +686,9 @@ const obj = {
 };
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Promise.then -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title"><code>Promise.then</code> in Class Method</h3>
         <pre class="chapter__section-code">
           <code>
@@ -709,9 +715,9 @@ new User('Arthur').loadProfile();
 });
             </code>
         </pre>
-      </article>
+      </section>
       <!-- setTimeout -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title"><code>setTimeout</code> with Function Expression</h3>
         <pre class="chapter__section-code">
           <code>
@@ -732,9 +738,9 @@ setTimeout(() => {
 }, 100);
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Event Delegation Function Expression -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Event Delegation with Function Expression</h3>
         <pre class="chapter__section-code">
           <code>
@@ -751,9 +757,9 @@ document.querySelector('#parent').addEventListener('click', function(e) {
             (<code>#parent</code>)</li>
           <li>✅ Ideal for delegation: you inspect <code>e.target</code> and act conditionally</li>
         </ul>
-      </article>
+      </section>
       <!-- Event Delegation Arrow Function -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Event Delegation with Arrow Function</h3>
         <pre class="chapter__section-code">
           <code>
@@ -769,9 +775,9 @@ document.querySelector('#parent').addEventListener('click', (e) => {
           <li>❌ Arrow functions <strong>do not bind <code>this</code></strong></li>
           <li>⚠️<code> this</code> is inherited from the enclosing scope — not the DOM element</li>
         </ul>
-      </article>
+      </section>
       <!-- DOM Callback Function Expression -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">DOM Callback with Function Expression</h3>
         <pre class="chapter__section-code">
           <code>
@@ -783,9 +789,9 @@ button.addEventListener('click', function() {
             </code>
         </pre>
         <p class="chapter__section-text">Works as expected.</p>
-      </article>
+      </section>
       <!-- DOM Callback Arrow Function -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">DOM Callback with Arrow Function</h3>
         <pre class="chapter__section-code">
           <code>
@@ -795,9 +801,9 @@ button.addEventListener('click', () => {
             </code>
         </pre>
         <p class="chapter__section-text">Arrow functions break <code>this</code> binding in DOM callbacks.</p>
-      </article>
+      </section>
       <!-- Arrow Functions vs Function Declarations and Expressions -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Arrow Functions vs Function Declarations and Expressions</h3>
         <p class="chapter__section-text">
           In JavaScript, <code>this</code> behaves differently depending on whether you use an arrow function,
@@ -855,10 +861,10 @@ obj.greet(); // ❌ undefined
           Summary: Regular functions determine <code>this</code> at call time and can be rebound.
           Arrow functions capture <code>this</code> at declaration time and cannot be rebound.
         </p>
-      </article>
-    </section>
+      </section>
+    </article>
     <!------------------------------------------------ ASYNC ------------------------------------------------>
-    <section id="async" class="chapter">
+    <article id="async" class="chapter">
       <h2 class="chapter__title">Asynchronous JavaScript: Promises and Async/Await</h2>
       <section class="chapter__intro">
         <h3 class="chapter__intro-title">Promises</h3>
@@ -869,7 +875,7 @@ obj.greet(); // ❌ undefined
         </p>
       </section>
       <!-- Creating and Using Promises -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Creating and Using Promises</h3>
         <pre class="chapter__section-code">
           <code>
@@ -892,9 +898,9 @@ myPromise
           <li><code>.then()</code> handles success</li>
           <li><code>.catch()</code> handles failure</li>
         </ul>
-      </article>
+      </section>
       <!-- Real Example -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Real Example: Simulating a Delay</h3>
         <pre class="chapter__section-code">
           <code>
@@ -907,9 +913,9 @@ function wait(ms) {
 wait(1000).then(msg => console.log(msg)); // "Waited 1000ms"
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Async/Await -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Async/Await</h3>
         <p class="chapter__section-text">Async/await makes asynchronous code look synchronous.</p>
         <pre class="chapter__section-code">
@@ -927,9 +933,9 @@ console.log("Yippee");
           <li>Does not block the main thread</li>
           <li>"Yippee" logs before the Promise resolves</li>
         </ul>
-      </article>
+      </section>
       <!-- Quirks -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Quirks with Await</h3>
         <pre class="chapter__section-code">
           <code>
@@ -946,9 +952,9 @@ for (const ms of [1000, 2000, 3000]) {
 });
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Error Handling -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Error Handling with Await</h3>
         <pre class="chapter__section-code">
           <code>
@@ -965,9 +971,9 @@ async function run() {
         <p class="chapter__section-text">Always wrap <code>await</code> in try/catch if the Promise might
           reject.
         </p>
-      </article>
+      </section>
       <!-- Parallel Promises -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Multiple Promises in Parallel</h3>
         <pre class="chapter__section-code">
           <code>
@@ -978,9 +984,9 @@ const settled = await Promise.allSettled([wait(1000), riskyPromise(), wait(3000)
 console.log(settled);
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Retrying -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Retrying Failed Promises</h3>
         <pre class="chapter__section-code">
           <code>
@@ -1001,13 +1007,13 @@ async function retryAsync(fn, retries = 3, delay = 1000) {
           <li>Jitter (random delay)</li>
           <li>Retry only on specific errors</li>
         </ul>
-      </article>
-    </section>
+      </section>
+    </article>
     <!------------------------------------------------ FUNCTIONS ------------------------------------------------>
-    <section id="functions" class="chapter">
+    <article id="functions" class="chapter">
       <h2 class="chapter__title">Function Declarations vs Function Expressions</h2>
       <!-- Function Declarations -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Function Declarations</h3>
         <pre class="chapter__section-code">
           <code>
@@ -1033,9 +1039,9 @@ function sayHi() {
 }
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Function Expressions -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Function Expressions</h3>
         <pre class="chapter__section-code">
           <code>
@@ -1063,9 +1069,9 @@ if (condition) {
 // handle is not available here
             </code>
         </pre>
-      </article>
+      </section>
       <!-- Real-World Patterns -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Real-World Patterns</h3>
         <ul class="summary">
           <li><strong>React/Vue</strong>: expressions for event handlers and hooks</li>
@@ -1073,8 +1079,8 @@ if (condition) {
           <li><strong>Closures</strong>: expressions to encapsulate logic</li>
           <li><strong>Dynamic behavior</strong>: expressions to return functions</li>
         </ul>
-      </article>
-      <article class="chapter__section">
+      </section>
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Switching from Declarations to Expressions</h3>
         <p class="chapter__section-text">
           Switching improves modularity, testability, and workflow clarity.
@@ -1139,9 +1145,9 @@ const withLogging = function(fn) {
           <li>Modular and composable logic</li>
           <li>Easy to test wrapped behavior</li>
         </ul>
-      </article>
+      </section>
       <!-- Declarations: Utilities & Helpers -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Function Declarations: Utilities & Helpers</h3>
         <h4 class="chapter__example-title">Top-Level Utility</h4>
         <pre class="chapter__section-code">
@@ -1174,9 +1180,9 @@ function normalizeUser(user) {
           <li>Keeps workflows clean and modular</li>
           <li>Not necessarily exported</li>
         </ul>
-      </article>
+      </section>
       <!-- Expressions: Higher-Order Functions -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Function Expressions: Higher-Order Functions</h3>
         <pre class="chapter__section-code">
           <code>
@@ -1200,10 +1206,10 @@ loggedGreet('Arthur'); // Logs + returns greeting
           <li>Compose or inject behavior</li>
           <li>Scoped and modular logic</li>
         </ul>
-      </article>
-    </section>
+      </section>
+    </article>
     <!------------------------------------------------ COMPOSITION ------------------------------------------------>
-    <section id="composition" class="chapter">
+    <article id="composition" class="chapter">
       <h2 class="chapter__title">Compositional Flexibility</h2>
       <section class="chapter__intro">
         <h3 class="chapter__intro-title">What Do We Mean by “Composition”?</h3>
@@ -1221,7 +1227,7 @@ loggedGreet('Arthur'); // Logs + returns greeting
         </ul>
       </section>
       <!-- Function Expressions -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Function Expression: Fully Composable</h3>
         <pre class="chapter__section-code">
           <code>
@@ -1239,9 +1245,9 @@ console.log(doubleThenSquare(3)); // 36
           <li>Works with anonymous or arrow functions</li>
           <li>Ideal for dynamic pipelines, middleware or higher-order functions</li>
         </ul>
-      </article>
+      </section>
       <!-- Function Declarations -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Function Declaration: Less Composable Inline</h3>
         <pre class="chapter__section-code">
           <code>
@@ -1264,9 +1270,9 @@ const doubleThenSquare = function(x) {
           <li>Can’t be returned or passed inline without wrapping</li>
           <li>Not ideal for dynamic composition</li>
         </ul>
-      </article>
+      </section>
       <!-- Real-World Example -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Real-World Example: Middleware Chain</h3>
         <h4 class="chapter__example-title">With Expressions</h4>
         <pre class="chapter__section-code">
@@ -1295,13 +1301,13 @@ function handler(x) {
 // Can't compose inline without expressions
           </code>
         </pre>
-      </article>
-    </section>
+      </section>
+    </article>
     <!------------------------------------------------ PATTERNS ------------------------------------------------>
-    <section id="patterns" class="chapter">
+    <article id="patterns" class="chapter">
       <h2 class="chapter__title">Patterns</h2>
       <!-- Debounce -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">debounce(fn, delay) — Rate-limiting noisy calls</h3>
         <p class="chapter__section-text">
           <strong>Use Case:</strong> Prevent a function from firing too frequently (e.g., on <code>input</code> or
@@ -1323,9 +1329,9 @@ function debounce(fn, delay) {
           <li>Reusable across UI components</li>
           <li>Keeps event handlers clean</li>
         </ul>
-      </article>
+      </section>
       <!-- Memoize -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">memoize(fn) — Cache-heavy computations</h3>
         <p class="chapter__section-text">
           <strong>Use Case:</strong> Avoid recomputation for expensive pure functions (e.g., Fibonacci, factorial, API
@@ -1350,9 +1356,9 @@ function memoize(fn) {
           <li>Improves performance</li>
           <li>Easy to wrap any pure function</li>
         </ul>
-      </article>
+      </section>
       <!-- Compose -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">compose(f, g) — Function chaining</h3>
         <p class="chapter__section-text">
           <strong>Use Case:</strong> Combine multiple functions into a single pipeline (e.g., data transformation).
@@ -1371,9 +1377,9 @@ function compose(f, g) {
           <li>Reduces nesting</li>
           <li>Improves readability and testability</li>
         </ul>
-      </article>
+      </section>
       <!-- WithLogging -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">withLogging(fn) — Behavior injection</h3>
         <p class="chapter__section-text">
           <strong>Use Case:</strong> Wrap any function with logging, timing, or error handling.
@@ -1393,9 +1399,9 @@ function withLogging(fn) {
           <li>Reusable across domains</li>
           <li>Improves debugging and onboarding</li>
         </ul>
-      </article>
+      </section>
       <!-- Throttle -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">throttle(fn, interval) — Limit execution rate</h3>
         <p class="chapter__section-text">
           <strong>Use Case:</strong> Prevent a function from running more than once every <code>interval</code> ms
@@ -1420,9 +1426,9 @@ function throttle(fn, interval) {
           <li>Reusable across UI and stat polling</li>
           <li>Keeps event handlers lean</li>
         </ul>
-      </article>
+      </section>
       <!-- Retry -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">retry(fn, attempts) — Resilient execution</h3>
         <p class="chapter__section-text">
           <strong>Use Case:</strong> Retry a function (often async) up to <code>attempts</code> times if it fails.
@@ -1447,9 +1453,9 @@ function retry(fn, attempts = 3) {
           <li>Improves resilience</li>
           <li>Easy to plug into fetch chains or service calls</li>
         </ul>
-      </article>
+      </section>
       <!-- ApplyMiddleware -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">applyMiddleware(...middlewares) — Composable logic layers</h3>
         <p class="chapter__section-text">
           <strong>Use Case:</strong> Chain multiple functions to wrap a core handler (e.g., logging, auth, validation).
@@ -1482,13 +1488,13 @@ const enhanced = applyMiddleware(withLogging, withValidation)(handler);
           <li>Declarative logic stacking</li>
           <li>Ideal for request pipelines, CLI tools, or stat processors</li>
         </ul>
-      </article>
-    </section>
+      </section>
+    </article>
     <!------------------------------------------------ CLOSURES ------------------------------------------------>
-    <section id="closures" class="chapter">
+    <article id="closures" class="chapter">
       <h2 class="chapter__title">Var, Let and Const in Closures</h2>
       <!-- Closure Pattern -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Closure Pattern: Capturing and Mutating <code>x</code></h3>
         <pre class="chapter__section-code">
       <code>
@@ -1512,9 +1518,9 @@ counter(); // x is now: 2
           <li><code>increment</code> forms a closure over <code>x</code></li>
           <li>Each call to <code>counter()</code> mutates the same <code>x</code></li>
         </ul>
-      </article>
+      </section>
       <!-- Let -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title"><code>let</code> — Block-scoped, mutable</h3>
         <pre class="chapter__section-code">
       <code>
@@ -1529,9 +1535,9 @@ function makeLetCounter() {
           <li>✅ Mutable</li>
           <li>✅ Scoped to the function block</li>
         </ul>
-      </article>
+      </section>
       <!-- Const -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title"><code>const</code> — Block-scoped, not reassignable</h3>
         <pre class="chapter__section-code">
       <code>
@@ -1546,9 +1552,9 @@ function makeConstCounter() {
           <li>❌ Cannot reassign <code>state</code> itself</li>
           <li>✅ Can mutate internal state</li>
         </ul>
-      </article>
+      </section>
       <!-- Var -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title"><code>var</code> — Function-scoped, hoisted</h3>
         <pre class="chapter__section-code">
       <code>
@@ -1563,9 +1569,9 @@ function makeVarCounter() {
           <li>⚠️ Hoisted to top of function</li>
           <li>⚠️ Can lead to bugs in loops or conditionals</li>
         </ul>
-      </article>
+      </section>
       <!-- Bonus: Pitfall -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Bonus: Pitfall with <code>var</code> in Loops</h3>
         <pre class="chapter__section-code">
       <code>
@@ -1585,9 +1591,9 @@ for (let i = 0; i < 3; i++) {
           <li><code>let</code> creates a new <code>i</code> per iteration</li>
           <li>Closures capture the correct value with <code>let</code></li>
         </ul>
-      </article>
+      </section>
       <!-- Why var is problematic -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Why <code>var</code> Can Be Problematic in Closures</h3>
         <h4 class="chapter__example-title">Function-scoped, not block-scoped</h4>
         <pre class="chapter__section-code">
@@ -1643,9 +1649,9 @@ for (let i = 0; i < 3; i++) {
           <li><code>let</code> creates a new <code>i</code> per iteration</li>
           <li>Closures capture the correct value</li>
         </ul>
-      </article>
+      </section>
       <!-- Summary -->
-      <article class="chapter__section">
+      <section class="chapter__section">
         <h3 class="chapter__section-title">Summary: Use <code>var</code> only when…</h3>
         <table class="chapter__table">
           <thead>
@@ -1673,8 +1679,8 @@ for (let i = 0; i < 3; i++) {
             </tr>
           </tbody>
         </table>
-      </article>
-    </section>
+      </section>
+    </article>
   </main>
   <footer class="footer">
     <p class="footer__text">© 2025 Arthur Woodlee.</p>
